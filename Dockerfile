@@ -3,12 +3,12 @@ FROM composer
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
 # Install rsync for deployment
-RUN apk --no-cache add openssh-client rsync openssl zlib-dev icu-dev libxml2-dev g++ autoconf openssl-dev make pcre-dev
+RUN apk --no-cache add openssh-client rsync openssl zlib-dev icu-dev libxml2-dev g++ autoconf openssl-dev make pcre-dev libpng-dev
 
 RUN docker-php-ext-configure intl
 
 #install mysql pdo
-RUN docker-php-ext-install pdo pdo_mysql bcmath soap
+RUN docker-php-ext-install pdo pdo_mysql bcmath soap pcntl gd
 
 #install mongodb php extension
 RUN pecl install mongodb-1.2.9 \
