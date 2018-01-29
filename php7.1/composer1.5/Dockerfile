@@ -11,7 +11,7 @@ RUN docker-php-ext-configure intl
 RUN docker-php-ext-install pdo pdo_mysql bcmath soap pcntl gd exif
 
 #install mongodb php extension
-RUN pecl install mongodb-1.2.9 \
+RUN pecl install mongodb-1.2.10 \
   && docker-php-ext-enable mongodb
 
 # Set correct entrypoint
