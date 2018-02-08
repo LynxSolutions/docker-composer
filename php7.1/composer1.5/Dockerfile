@@ -6,9 +6,10 @@ MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 RUN apk --no-cache add openssh-client rsync openssl zlib-dev icu-dev libxml2-dev g++ autoconf openssl-dev make pcre-dev libpng-dev libmcrypt-dev
 
 RUN docker-php-ext-configure intl
+RUN docker-php-ext-configure soap --enable-soap
 
 #install mysql pdo
-RUN docker-php-ext-install pdo pdo_mysql bcmath php-soap soap pcntl gd exif
+RUN docker-php-ext-install pdo pdo_mysql bcmath soap pcntl gd exif
 
 #install mongodb php extension
 RUN pecl install mongodb-1.2.10 \
