@@ -9,7 +9,7 @@ RUN docker-php-ext-configure intl
 RUN docker-php-ext-configure soap --enable-soap
 
 #install mysql pdo
-RUN docker-php-ext-install pdo pdo_mysql bcmath soap pcntl gd exif
+RUN docker-php-ext-install pdo pdo_mysql bcmath soap pcntl gd exif zip
 
 #install mongodb php extension
 RUN pecl install mongodb-1.2.10 \
